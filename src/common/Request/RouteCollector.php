@@ -71,6 +71,7 @@ use Tuleap\Http\Response\BinaryFileResponseBuilder;
 use Tuleap\Http\Server\SessionWriteCloseMiddleware;
 use Tuleap\Layout\IncludeAssets;
 use Tuleap\Layout\SiteHomepageController;
+use Tuleap\News\ListNewsController;
 use Tuleap\News\NewsDao;
 use Tuleap\News\PermissionsPerGroup;
 use Tuleap\Password\Administration\PasswordPolicyDisplayController;
@@ -617,6 +618,13 @@ class RouteCollector
         );
     }
 
+    public static function getNewsList(): DispatchableWithRequest
+    {
+        return new ListNewsController(
+            \TemplateRendererFactory::build(),
+        );
+    }
+
     public function getLegacyController(string $path)
     {
         return new LegacyRoutesController($path);
@@ -660,6 +668,8 @@ class RouteCollector
             $r->post('/services/delete', [self::class, 'getPostServicesDelete']);
             $r->get('/banner', [self::class, 'getGetProjectBannerAdministration']);
         });
+
+        $r->get('/project/{id:\d+}/news', [self::class, 'getNewsList']);
 
         $r->addRoute(['GET', 'POST'], '/projects/{name}[/]', [self::class, 'getOrPostProjectHome']);
 
