@@ -1,20 +1,22 @@
 <div>
     <main class="tlp-framed-vertically">
-        <h1 class="tlp-framed-horizontally">Annonces</h1>
-        <nav class="tlp-tabs">
-            <a href="javascript:;" class="tlp-tab">NOUVELLE</a>
-            <a href="javascript:;" class="tlp-tab">GESTION</a>
-            <a href="javascript:;" class="tlp-tab">CONSEILS</a>
-
-        </nav>
+        <h1 class="tlp-framed-horizontally">NEWS</h1>
         <div class="tlp-framed-horizontally">
             <section class="tlp-pane">
                 <div class="tlp-pane-container">
+                    <section class="tlp-pane-section">
+                        <div class="tlp-table-actions">
+                            <button type="button" class="tlp-button-primary tlp-table-actions-element"><i class="tlp-button-icon fa fa-plus"></i> Add News</button>
+                        </div>
                         <table class="tlp-table" id="my-table">
                             <thead>
                             <tr>
                                 <th class="tlp-table-cell-filterable">titre</th>
                                 <th class="tlp-table-cell-filterable">Description</th>
+                                <th class="tlp-table-cell-filterable">Edition</th>
+                                <th class="tlp-table-cell-filterable"></th>
+                                <th class="tlp-table-cell-filterable">Widget</th>
+
                                 <th></th>
                             </tr>
                             </thead>
@@ -32,6 +34,20 @@
                                         <i class="fa fa-pencil "></i> edit
                                     </a>
                                 </td>
+                                <td class="tlp-table-cell-actions">
+                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
+                                        <i class="fa fa-trash"></i> supprimer
+                                    </a>
+                                </td>
+                                <td class="tlp-table-cell-actions">
+                                <div class="tlp-form-element">
+                                    <div class="tlp-switch">
+                                        <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                        <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                    </div>
+                                </div>
+                                </td>
+
                             </tr>
                             <tr>
                                 <td class="tlp-table-cell-filterable">News 8</td>
@@ -40,6 +56,19 @@
                                     <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
                                         <i class="fa fa-pencil "></i> edit
                                     </a>
+                                </td>
+                                <td class="tlp-table-cell-actions">
+                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
+                                        <i class="fa fa-trash"></i> supprimer
+                                    </a>
+                                </td>
+                                <td class="tlp-table-cell-actions">
+                                    <div class="tlp-form-element">
+                                        <div class="tlp-switch">
+                                            <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -50,14 +79,40 @@
                                         <i class="fa fa-pencil "></i> edit
                                     </a>
                                 </td>
+                                <td class="tlp-table-cell-actions">
+                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
+                                        <i class="fa fa-trash"></i> supprimer
+                                    </a>
+                                </td>
+                                <td class="tlp-table-cell-actions">
+                                    <div class="tlp-form-element">
+                                        <div class="tlp-switch">
+                                            <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="tlp-table-cell-filterable">News 54</td>
-                                <td class="tlp-table-cell-filterable">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                                <td class="tlp-table-cell-filterable">Lipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
                                 <td class="tlp-table-cell-actions">
                                     <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
                                         <i class="fa fa-pencil "></i> edit
                                     </a>
+                                </td>
+                                <td class="tlp-table-cell-actions">
+                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
+                                        <i class="fa fa-trash"></i> supprimer
+                                    </a>
+                                </td>
+                                <td class="tlp-table-cell-actions">
+                                    <div class="tlp-form-element">
+                                        <div class="tlp-switch">
+                                            <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -68,14 +123,81 @@
                                         <i class="fa fa-pencil"></i> edit
                                     </a>
                                 </td>
+                                <td class="tlp-table-cell-actions">
+                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
+                                        <i class="fa fa-trash"></i> supprimer
+                                    </a>
+                                </td>
+                                <td class="tlp-table-cell-actions">
+                                    <div class="tlp-form-element">
+                                        <div class="tlp-switch">
+                                            <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
                         <script>
                             tlp.filterInlineTable(document.getElementById('filter-table'));
                         </script>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
 
-                    </div>
+<div>
+    <main class="tlp-framed-vertically">
+        <h1 class="tlp-framed-horizontally">Nouvelle/titre news select</h1>
+        <div class="tlp-framed-horizontally">
+            <section class="tlp-pane">
+                <div class="tlp-pane-container">
+                    <section class="tlp-pane-section">
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="username">Sujet</label>
+                            <input type="text" class="tlp-input" id="username" name="username" placeholder="titre">
+                        </div>
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="description">Description</label>
+                            <textarea type="text" class="tlp-textarea" id="description" name="description" placeholder="I want to believe"></textarea>
+                        </div>
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="area-adjusted">Promotion</label>
+                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Demander la promotion en première page de Tuleap ? </p>
+                            <select class="tlp-select tlp-select-adjusted" id="area-adjusted" name="area">
+                                <option value=""></option>
+                                <option value="area-51">oui</option>
+                                <option value="area-52">non</option>
+                            </select>
+                        </div>
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="area-adjusted">Confidentialité</label>
+                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Visible par tous ou seulement par les membres du projet</p>
+                            <select class="tlp-select tlp-select-adjusted" id="area-adjusted" name="area">
+                                <option value=""></option>
+                                <option value="area-51">publique</option>
+                                <option value="area-52">privée</option>
+                            </select>
+                        </div>
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="types-adjusted">Partage</label>
+                            <select class="tlp-select tlp-select-adjusted" id="types-adjusted" name="types[]" multiple>
+                                <option value="saucer">membre du projet</option>
+                                <option value="spheroid">admin du  projet</option>
+                                <option value="triangular">utilisateurs</option>
+                                <option value="cigar">gestionnaire fichier</option>
+                                <option value="ovoid">admin wiki</option>
+                                <option value="ovoid">admin d'annonce</option>
+
+                            </select>
+                        </div>
+                        <button type="button" class="tlp-button-primary">
+                            Valider
+                        </button>
+                    </section>
                 </div>
             </section>
         </div>
