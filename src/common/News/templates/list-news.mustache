@@ -112,7 +112,6 @@
                                             <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
                                             <label for="toggle" class="tlp-switch-button" aria-hidden></label>
                                         </div>
-                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -134,7 +133,6 @@
                                             <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
                                             <label for="toggle" class="tlp-switch-button" aria-hidden></label>
                                         </div>
-                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -167,21 +165,22 @@
                         <div class="tlp-form-element">
                             <label class="tlp-label" for="area-adjusted">Promotion</label>
                             <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Demander la promotion en première page de Tuleap ? </p>
-                            <select class="tlp-select tlp-select-adjusted" id="area-adjusted" name="area">
-                                <option value=""></option>
-                                <option value="area-51">oui</option>
-                                <option value="area-52">non</option>
-                            </select>
+                            <div class="tlp-switch">
+                                <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                            </div>
+
                         </div>
                         <div class="tlp-form-element">
-                            <label class="tlp-label" for="area-adjusted">Confidentialité</label>
+                            <label class="tlp-label" for="area-adjusted">Publique</label>
                             <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Visible par tous ou seulement par les membres du projet</p>
-                            <select class="tlp-select tlp-select-adjusted" id="area-adjusted" name="area">
-                                <option value=""></option>
-                                <option value="area-51">publique</option>
-                                <option value="area-52">privée</option>
-                            </select>
-                        </div>
+                            <div class="tlp-form-element">
+                                <div class="tlp-switch">
+                                    <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                    <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                </div>
+
+                            </div>
                         <div class="tlp-form-element">
                             <label class="tlp-label" for="types-adjusted">Partage</label>
                             <select class="tlp-select tlp-select-adjusted" id="types-adjusted" name="types[]" multiple>
