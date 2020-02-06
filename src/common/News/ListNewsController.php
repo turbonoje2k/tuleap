@@ -43,8 +43,13 @@ class ListNewsController implements DispatchableWithRequest, DispatchableWithBur
 
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
+        $all_news = [
+            new OneNewsPresenter(1, 'News', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+            new OneNewsPresenter(8, 'News', 'sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, adipisicing elit consectetur adipisicing elit.'),
+        ];
+
         $layout->header(['title' => 'List of news']);
-        $this->renderer->renderToPage('list-news', []);
+        $this->renderer->renderToPage('list-news', new ListOfNewsPresenter($all_news));
         $layout->footer([]);
     }
 }

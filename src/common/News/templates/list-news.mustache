@@ -25,9 +25,10 @@
                                     There isn't any matching news
                                 </td>
                             </tr>
+                            {{# list_of_news }}
                             <tr>
-                                <td class="tlp-table-cell-filterable">News 1</td>
-                                <td class="tlp-table-cell-filterable">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                                <td class="tlp-table-cell-filterable">{{ title }} {{ id }}</td>
+                                <td class="tlp-table-cell-filterable">{{ content }}</td>
                                 <td class="tlp-table-cell-actions">
                                     <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="/project/102/news/3">
                                         <i class="fa fa-pencil "></i> edit
@@ -48,92 +49,7 @@
                                 </td>
 
                             </tr>
-                            <tr>
-                                <td class="tlp-table-cell-filterable">News 8</td>
-                                <td class="tlp-table-cell-filterable">sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet,  adipisicing elit consectetur adipisicing elit.</td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-pencil "></i> edit
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-trash"></i> supprimer
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <div class="tlp-form-element">
-                                        <div class="tlp-switch">
-                                            <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
-                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tlp-table-cell-filterable">News 149</td>
-                                <td class="tlp-table-cell-filterable">ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur  adipisicing elit adipisicing elit.</td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-pencil "></i> edit
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-trash"></i> supprimer
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <div class="tlp-form-element">
-                                        <div class="tlp-switch">
-                                            <input type="checkbox" id="toggle2 class="tlp-switch-checkbox">
-                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tlp-table-cell-filterable">News 54</td>
-                                <td class="tlp-table-cell-filterable">Lipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-pencil "></i> edit
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-trash"></i> supprimer
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <div class="tlp-form-element">
-                                        <div class="tlp-switch">
-                                            <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
-                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
-                                        </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tlp-table-cell-filterable">News 12</td>
-                                <td class="tlp-table-cell-filterable">consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-pencil"></i> edit
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="javascript:;">
-                                        <i class="fa fa-trash"></i> supprimer
-                                    </a>
-                                </td>
-                                <td class="tlp-table-cell-actions">
-                                    <div class="tlp-form-element">
-                                        <div class="tlp-switch">
-                                            <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
-                                            <label for="toggle" class="tlp-switch-button" aria-hidden></label>
-                                        </div>
-                                </td>
-                            </tr>
+                            {{/ list_of_news }}
                             </tbody>
                         </table>
                         <script>
