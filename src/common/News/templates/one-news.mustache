@@ -1,0 +1,55 @@
+<div>
+    <main class="tlp-framed-vertically">
+        <h1 class="tlp-framed-horizontally">Nouvelle/titre news select</h1>
+        <div class="tlp-framed-horizontally">
+            <section class="tlp-pane">
+                <div class="tlp-pane-container">
+                    <section class="tlp-pane-section">
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="username">Sujet</label>
+                            <input type="text" class="tlp-input" id="username" name="username" placeholder="titre">
+                        </div>
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="description">Description</label>
+                            <textarea type="text" class="tlp-textarea" id="description" name="description" placeholder="I want to believe"></textarea>
+                        </div>
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="area-adjusted">Promotion</label>
+                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Demander la promotion en première page de Tuleap ? </p>
+                            <div class="tlp-switch">
+                                <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                            </div>
+
+                        </div>
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="area-adjusted">Publique</label>
+                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Visible par tous ou seulement par les membres du projet</p>
+                            <div class="tlp-form-element">
+                                <div class="tlp-switch">
+                                    <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                    <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                </div>
+
+                            </div>
+                            <div class="tlp-form-element">
+                                <label class="tlp-label" for="types-adjusted">Partage</label>
+                                <select class="tlp-select tlp-select-adjusted" id="types-adjusted" name="types[]" multiple>
+                                    <option value="saucer">membre du projet</option>
+                                    <option value="spheroid">admin du  projet</option>
+                                    <option value="triangular">utilisateurs</option>
+                                    <option value="cigar">gestionnaire fichier</option>
+                                    <option value="ovoid">admin wiki</option>
+                                    <option value="ovoid">admin d'annonce</option>
+
+                                </select>
+                            </div>
+                            <button type="button" class="tlp-button-primary">
+                                Valider
+                            </button>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
