@@ -26,8 +26,6 @@ use HTTPRequest;
 use Tuleap\Layout\BaseLayout;
 use Tuleap\Request\DispatchableWithBurningParrot;
 use Tuleap\Request\DispatchableWithRequest;
-use Tuleap\Request\ForbiddenException;
-use Tuleap\Request\NotFoundException;
 
 class DisplayOneNewsController implements DispatchableWithRequest, DispatchableWithBurningParrot
 {
@@ -43,12 +41,20 @@ class DisplayOneNewsController implements DispatchableWithRequest, DispatchableW
 
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
-        $edit_news =
-            new EditingOneNewsPresenter(1, 'News', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.');
-            new EditingOneNewsPresenter(8, 'News', 'sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, adipisicing elit consectetur adipisicing elit.');
+        /*
+        if ($variables['news_id'] == 1) {
+            $edit_news = new EditingOneNewsPresenter(333, 'Mon article de blog', 'du contenu');
+        } else {
+            $edit_news = new EditingOneNewsPresenter(699, 'Un autre titre', 'bla bla');
+        }
+        */
+        $edit_news = [
+            1 => new EditingOneNewsPresenter(333, 'Mon article de blog', 'du contenu'),
+            8 => new EditingOneNewsPresenter(699, 'Un autre titre', 'bla bla'),
+        ];
 
         $layout->header(['title' => 'One news']);
-        $this->renderer->renderToPage('one-news', $edit_news);
+        $this->renderer->renderToPage('one-news', $edit_news[$variables['news_id']]);
         $layout->footer([]);
     }
 }
