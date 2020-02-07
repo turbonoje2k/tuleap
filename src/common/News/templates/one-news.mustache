@@ -1,24 +1,24 @@
 <div>
     <main class="tlp-framed-vertically">
-        <h1 class="tlp-framed-horizontally">Nouvelle/titre news select</h1>
+        <h1 class="tlp-framed-horizontally">{{title}} {{id}}</h1>
         <div class="tlp-framed-horizontally">
             <section class="tlp-pane">
                 <div class="tlp-pane-container">
                     <section class="tlp-pane-section">
                         <div class="tlp-form-element">
-                            <label class="tlp-label" for="username">Sujet</label>
-                            <input type="text" class="tlp-input" id="username" name="username" placeholder="titre">
+                            <label class="tlp-label" for="username">Titre</label>
+                            <input type="text" class="tlp-input" id="username" name="username" placeholder={{title}}{{id}}>
                         </div>
                         <div class="tlp-form-element">
                             <label class="tlp-label" for="description">Description</label>
-                            <textarea type="text" class="tlp-textarea" id="description" name="description" placeholder="I want to believe"></textarea>
+                            <textarea type="text" class="tlp-textarea" id="description" name="description" placeholder="{{content}}"></textarea>
                         </div>
                         <div class="tlp-form-element">
                             <label class="tlp-label" for="area-adjusted">Promotion</label>
                             <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Demander la promotion en première page de Tuleap ? </p>
                             <div class="tlp-switch">
                                 <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
-                                <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                <label for="toggle" class="tlp-switch-button" aria-hidden="false"></label>
                             </div>
 
                         </div>
@@ -27,8 +27,8 @@
                             <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Visible par tous ou seulement par les membres du projet</p>
                             <div class="tlp-form-element">
                                 <div class="tlp-switch">
-                                    <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
-                                    <label for="toggle" class="tlp-switch-button" aria-hidden></label>
+                                    <input type="checkbox" id="toggle_public" class="tlp-switch-checkbox">
+                                    <label for="toggle_public" class="tlp-switch-button" aria-hidden="false"></label>
                                 </div>
                             </div>
 
@@ -52,5 +52,5 @@
                 </div>
             </section>
         </div>
-    </main>
+        </main>
 </div>
