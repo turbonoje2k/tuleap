@@ -1,14 +1,13 @@
 <div>
     <main class="tlp-framed-vertically">
-        <main class="tlp-framed-vertically">
             <div class="breadcrumb-item">
                 <a href="/project/102/news" class="breadcrumb-link router-link-active">
                     <i class="breadcrumb-link-icon fa fa-newspaper-o"></i> <span>News</span>
                 </a>
             </div>
-            <span class="breadcrumb-item">
-            <a class="breadcrumb-link router-link-exact-active router-link-active fa fa-edit">  <span>{{title}} {{id}}</span></a>
-            </span>
+            <div class="breadcrumb-item">
+            <a class="breadcrumb-link router-link-exact-active router-link-active fa fa-edit"> {{title}} {{id}}</a>
+            </div>
 
         <h1 class="tlp-framed-horizontally">{{title}} {{id}}</h1>
         <div class="tlp-framed-horizontally">
@@ -19,42 +18,45 @@
                             <label class="tlp-label" for="username">Titre</label>
                             <input type="text" class="tlp-input" id="username" name="username" placeholder="" value="{{title}}{{id}}">
                         </div>
+
                         <div class="tlp-form-element">
                             <label class="tlp-label" for="description">Description</label>
                             <textarea type="text" class="tlp-textarea" id="description" name="description" placeholder="">{{content}}</textarea>
                         </div>
+
                         <div class="tlp-form-element">
                             <label class="tlp-label" for="area-adjusted">Promotion</label>
-                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Demander la promotion en première page de Tuleap ? </p>
                             <div class="tlp-switch">
                                 <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
                                 <label for="toggle" class="tlp-switch-button" aria-hidden="false"></label>
                             </div>
-
+                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Demander la promotion en première page de Tuleap ? </p>
                         </div>
+
                         <div class="tlp-form-element">
                             <label class="tlp-label" for="area-adjusted">Publique</label>
-                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Visible par tous ou seulement par les membres du projet</p>
                             <div class="tlp-form-element">
                                 <div class="tlp-switch">
                                     <input type="checkbox" id="toggle_public" class="tlp-switch-checkbox">
                                     <label for="toggle_public" class="tlp-switch-button" aria-hidden="false"></label>
                                 </div>
-                            </div>
-
-                            <div class="tlp-form-element">
-                                <label class="tlp-label" for="types-adjusted">Partage</label>
-                                <select class="tlp-select tlp-select-adjusted" id="types-adjusted" name="types[]" multiple>
-                                    <option value="saucer">membre du projet</option>
-                                    <option value="spheroid">admin du  projet</option>
-                                    <option value="triangular">utilisateurs</option>
-                                    <option value="cigar">gestionnaire fichier</option>
-                                    <option value="ovoid">admin wiki</option>
-                                    <option value="ovoid">admin d'annonce</option>
-
-                                </select>
+                                <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Visible par tous ou seulement par les membres du projet</p>
                             </div>
                         </div>
+
+                        <div class="tlp-form-element">
+                            <label class="tlp-label" for="types-adjusted">Partage</label>
+                            <select class="tlp-select tlp-select-adjusted" id="types-adjusted" name="types[]" multiple>
+                                <option value="project_member">membre du projet</option>
+                                <option value="project_admin">admin du  projet</option>
+                                <option value="users">utilisateurs</option>
+                                <option value="files_admin">gestionnaire fichier</option>
+                                <option value="wiki_admin">admin wiki</option>
+                                <option value="news_admin">admin d'annonce</option>
+                            </select>
+                        </div>
+
+
                             <button type="button" class="tlp-button-primary">
                                 Valider
                             </button>
