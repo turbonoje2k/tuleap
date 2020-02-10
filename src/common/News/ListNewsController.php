@@ -25,27 +25,38 @@ namespace Tuleap\News;
 use HTTPRequest;
 use Tuleap\Layout\BaseLayout;
 use Tuleap\Request\DispatchableWithBurningParrot;
+use Tuleap\Request\DispatchableWithProject;
 use Tuleap\Request\DispatchableWithRequest;
 use Tuleap\Request\ForbiddenException;
+use Tuleap\Request\GetProjectTrait;
 use Tuleap\Request\NotFoundException;
 
-class ListNewsController implements DispatchableWithRequest, DispatchableWithBurningParrot
+class ListNewsController implements DispatchableWithRequest, DispatchableWithBurningParrot, DispatchableWithProject
 {
+    use GetProjectTrait;
+
     /**
      * @var \MustacheRenderer|\TemplateRenderer
      */
     private $renderer;
+    /**
+     * @var \ProjectManager
+     */
+    private $project_manager;
 
-    public function __construct(\TemplateRendererFactory $renderer_factory)
+    public function __construct(\TemplateRendererFactory $renderer_factory, \ProjectManager $project_manager)
     {
         $this->renderer = $renderer_factory->getRenderer(__DIR__ . '/templates');
+        $this->project_manager = $project_manager;
     }
 
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
+        $project = $this->getProject($variables);
+
         $list_news_dao = new ListNewsDao();
         $all_news = [];
-        foreach ($list_news_dao->getProjectNews() as $row) {
+        foreach ($list_news_dao->getProjectNews($project) as $row) {
             $all_news []= new OneNewsPresenter($row['id'], $row['summary'], $row['details']);
         }
 

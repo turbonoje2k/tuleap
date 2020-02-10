@@ -623,6 +623,7 @@ class RouteCollector
     {
         return new ListNewsController(
             \TemplateRendererFactory::build(),
+            ProjectManager::instance(),
         );
     }
 
@@ -677,7 +678,7 @@ class RouteCollector
             $r->get('/banner', [self::class, 'getGetProjectBannerAdministration']);
         });
 
-        $r->get('/project/{id:\d+}/news', [self::class, 'getNewsList']);
+        $r->get('/project/{project_id:\d+}/news', [self::class, 'getNewsList']);
         $r->get('/project/{project_id:\d+}/news/{news_id:\d+}', [self::class, 'getOneNews']);
 
         $r->addRoute(['GET', 'POST'], '/projects/{name}[/]', [self::class, 'getOrPostProjectHome']);

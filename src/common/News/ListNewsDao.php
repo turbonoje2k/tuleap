@@ -24,9 +24,9 @@ use Tuleap\DB\DataAccessObject;
 
 class ListNewsDao extends DataAccessObject
 {
-    public function getProjectNews(): array
+    public function getProjectNews(\Project $project): array
     {
         $sql = 'SELECT * FROM news_bytes WHERE group_id = ?';
-        return $this->getDB()->run($sql, 102);
+        return $this->getDB()->run($sql, $project->getID());
     }
 }
