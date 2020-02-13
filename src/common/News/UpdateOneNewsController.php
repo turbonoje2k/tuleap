@@ -37,6 +37,6 @@ class UpdateOneNewsController implements DispatchableWithRequest
         $update_news =(int) $variables['$update_news'];
         var_dump("Je vais mettre à jour un truc");
 
-        $row = $list_news_dao->updateOneNews($update_news);
+        $row = $list_news_dao->postOneNews($update_news);
     }
 }
