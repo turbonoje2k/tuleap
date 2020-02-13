@@ -21,12 +21,24 @@
 namespace Tuleap\News;
 
 use Tuleap\DB\DataAccessObject;
+use Tuleap\DB\DBConnection;
 
 class ListNewsDao extends DataAccessObject
 {
+    public function __construct(?DBConnection $db_connection = null)
+    {
+        parent::__construct($db_connection);
+    }
+
     public function getProjectNews(\Project $project): array
     {
         $sql = 'SELECT * FROM news_bytes WHERE group_id = ?';
         return $this->getDB()->run($sql, $project->getID());
+    }
+
+    public function getOneNews(int $news_id): array
+    {
+        $sql = 'SELECT * FROM news_bytes WHERE id = ?';
+        return $this->getDB()->run($sql, $news_id);
     }
 }

@@ -6,7 +6,10 @@
                 <div class="tlp-pane-container">
                     <section class="tlp-pane-section">
                         <div class="tlp-table-actions">
-                            <button type="button" class="tlp-button-primary tlp-table-actions-element"><i class="tlp-button-icon fa fa-plus"></i> Add News</button>
+                            <button type="button" class="tlp-button-primary tlp-table-actions-element">
+                                <i class="tlp-button-icon fa fa-plus"></i>
+                                Add News
+                            </button>
                         </div>
                         <table class="tlp-table" id="my-table">
                             <thead>
@@ -16,7 +19,6 @@
                                 <th class="tlp-table-cell-filterable">Edition</th>
                                 <th class="tlp-table-cell-filterable"></th>
                                 <th class="tlp-table-cell-filterable">Widget</th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -27,10 +29,11 @@
                             </tr>
                             {{# list_of_news }}
                             <tr>
-                                <td class="tlp-table-cell-filterable">{{ title }} {{ id }}</td>
+                                <td class="tlp-table-cell-filterable">{{ title }}</td>
                                 <td class="tlp-table-cell-filterable">{{ content }}</td>
                                 <td class="tlp-table-cell-actions">
-                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline" href="/project/102/news/{{ id }}">
+                                    <a class="tlp-table-cell-actions-button tlp-button-small tlp-button-primary tlp-button-outline"
+                                       href="/project/102/news/{{ id }}">
                                         <i class="fa fa-pencil "></i> edit
                                     </a>
                                 </td>

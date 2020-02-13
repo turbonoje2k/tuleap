@@ -53,7 +53,6 @@ class ListNewsController implements DispatchableWithRequest, DispatchableWithBur
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
         $project = $this->getProject($variables);
-
         $list_news_dao = new ListNewsDao();
         $all_news = [];
         foreach ($list_news_dao->getProjectNews($project) as $row) {
