@@ -31,12 +31,12 @@ use Tuleap\Request\NotFoundException;
 
 class UpdateOneNewsController implements DispatchableWithRequest
 {
+
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
-        $list_news_dao = new ListNewsDao();
-        $update_news =(int) $variables['$update_news'];
+        //1 ou se controler se manifeste
+        //2 comment y acceder
+        //afficher ce var_dump dans ce controller
         var_dump("Je vais mettre à jour un truc");
-
-        $row = $list_news_dao->postOneNews($update_news);
     }
 }
