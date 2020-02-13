@@ -27,9 +27,7 @@ use Tuleap\Layout\BaseLayout;
 use Tuleap\Request\DispatchableWithBurningParrot;
 use Tuleap\Request\DispatchableWithProject;
 use Tuleap\Request\DispatchableWithRequest;
-use Tuleap\Request\ForbiddenException;
 use Tuleap\Request\GetProjectTrait;
-use Tuleap\Request\NotFoundException;
 
 class ListNewsController implements DispatchableWithRequest, DispatchableWithBurningParrot, DispatchableWithProject
 {

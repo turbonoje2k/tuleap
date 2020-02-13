@@ -26,7 +26,6 @@ use HTTPRequest;
 use Tuleap\Layout\BaseLayout;
 use Tuleap\Request\DispatchableWithBurningParrot;
 use Tuleap\Request\DispatchableWithRequest;
-use Tuleap\Request\GetProjectTrait;
 
 class DisplayOneNewsController implements DispatchableWithRequest, DispatchableWithBurningParrot
 {
