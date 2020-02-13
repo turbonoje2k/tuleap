@@ -75,6 +75,7 @@ use Tuleap\News\DisplayOneNewsController;
 use Tuleap\News\ListNewsController;
 use Tuleap\News\NewsDao;
 use Tuleap\News\PermissionsPerGroup;
+use Tuleap\News\UpdateOneNewsController;
 use Tuleap\Password\Administration\PasswordPolicyDisplayController;
 use Tuleap\Password\Administration\PasswordPolicyUpdateController;
 use Tuleap\Password\Configuration\PasswordConfigurationDAO;
@@ -634,6 +635,11 @@ class RouteCollector
         );
     }
 
+    public static function postOneNews(): DispatchableWithRequest
+    {
+        return new UpdateOneNewsController();
+    }
+
     public function getLegacyController(string $path)
     {
         return new LegacyRoutesController($path);
@@ -680,6 +686,7 @@ class RouteCollector
 
         $r->get('/project/{project_id:\d+}/news', [self::class, 'getNewsList']);
         $r->get('/project/{project_id:\d+}/news/{news_id:\d+}', [self::class, 'getOneNews']);
+        $r->post('/project/{project_id:\d+}/news/{news_id:\d+}', [self::class, 'postOneNews']);
 
         $r->addRoute(['GET', 'POST'], '/projects/{name}[/]', [self::class, 'getOrPostProjectHome']);
 

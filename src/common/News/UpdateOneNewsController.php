@@ -18,40 +18,25 @@
  * along with Tuleap. If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 declare(strict_types=1);
 
 namespace Tuleap\News;
 
 use HTTPRequest;
 use Tuleap\Layout\BaseLayout;
-use Tuleap\Request\DispatchableWithBurningParrot;
 use Tuleap\Request\DispatchableWithRequest;
+use Tuleap\Request\ForbiddenException;
 use Tuleap\Request\NotFoundException;
 
-class DisplayOneNewsController implements DispatchableWithRequest, DispatchableWithBurningParrot
+class UpdateOneNewsController implements DispatchableWithRequest
 {
-    /**
-     * @var \MustacheRenderer|\TemplateRenderer
-     */
-    private $renderer;
-
-    public function __construct(\TemplateRendererFactory $renderer_factory)
-    {
-        $this->renderer = $renderer_factory->getRenderer(__DIR__ . '/templates');
-    }
-
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
-        $List_news_dao = new ListNewsDao();
-        $news_id = (int) $variables['news_id'];
-        $row = $List_news_dao->getOneNews($news_id);
-        if (! $row) {
-            throw new NotFoundException("Cet ID n'existe pas");
-        }
-        $edit_news = new EditingOneNewsPresenter($row['id'], $row['summary'], $row['details']);
+        $list_news_dao = new ListNewsDao();
+        $update_news =(int) $variables['$update_news'];
+        var_dump("Je vais mettre à jour un truc");
 
-        $layout->header(['title' => 'One news']);
-        $this->renderer->renderToPage('one-news', $edit_news);
-        $layout->footer([]);
+        $row = $list_news_dao->updateOneNews($update_news);
     }
 }
