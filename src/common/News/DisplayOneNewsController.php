@@ -48,7 +48,7 @@ class DisplayOneNewsController implements DispatchableWithRequest, DispatchableW
         if (! $row) {
             throw new NotFoundException("Cet ID n'existe pas");
         }
-        $edit_news = new EditingOneNewsPresenter($row['id'], $row['summary'], $row['details']);
+        $edit_news = new EditingOneNewsPresenter($row['id'], $row['summary'], $row['details'], $row['group_id']);
 
         $layout->header(['title' => 'One news']);
         $this->renderer->renderToPage('one-news', $edit_news);

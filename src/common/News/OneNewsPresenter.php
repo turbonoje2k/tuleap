@@ -27,11 +27,13 @@ class OneNewsPresenter
     public $id;
     public $title;
     public $content;
+    public $group;
 
-    public function __construct(int $id, string $title, string $content)
+    public function __construct(int $id, string $title, string $content, int $group)
     {
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;
+        $this->group = $group;
     }
 }

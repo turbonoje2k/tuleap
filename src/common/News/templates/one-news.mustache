@@ -1,7 +1,7 @@
 <div>
     <main class="tlp-framed-vertically">
             <div class="breadcrumb-item">
-                <a href="/project/102/news" class="breadcrumb-link router-link-active">
+                <a href="/project/{{group}}/news" class="breadcrumb-link router-link-active">
                     <i class="breadcrumb-link-icon fa fa-newspaper-o"></i> <span>News</span>
                 </a>
             </div>
@@ -14,7 +14,7 @@
             <section class="tlp-pane">
                 <div class="tlp-pane-container">
                     <section class="tlp-pane-section">
-                        <form action="/project/102/news/{{id}}" method="post">
+                        <form action="/project/{{group}}/news/{{id}}" method="post">
                             <div class="tlp-form-element">
                                 <label class="tlp-label" for="username">Titre</label>
                                 <input type="text" class="tlp-input" id="username" name="username" placeholder="" value="{{title}}">

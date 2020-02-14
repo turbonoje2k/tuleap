@@ -54,7 +54,7 @@ class ListNewsController implements DispatchableWithRequest, DispatchableWithBur
         $list_news_dao = new ListNewsDao();
         $all_news = [];
         foreach ($list_news_dao->getProjectNews($project) as $row) {
-            $all_news []= new OneNewsPresenter($row['id'], $row['summary'], $row['details']);
+            $all_news []= new OneNewsPresenter($row['id'], $row['summary'], $row['details'], $row['group_id']);
         }
 
 
