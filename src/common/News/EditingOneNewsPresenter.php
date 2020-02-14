@@ -27,13 +27,13 @@ class EditingOneNewsPresenter
     public $id;
     public $title;
     public $content;
-    public $group;
+    public $project_id;
 
-    public function __construct(int $id, string $title, string $content, int $group)
+    public function __construct(int $id, string $title, string $content, int $project_id)
     {
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;
-        $this->group = $group;
+        $this->project_id = $project_id;
     }
 }
