@@ -34,9 +34,7 @@ class UpdateOneNewsController implements DispatchableWithRequest
 
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
-        //1 ou se controler se manifeste
-        //2 comment y acceder
-        //afficher ce var_dump dans ce controller
+
         var_dump("Je vais mettre à jour un truc");
     }
 }

@@ -14,52 +14,59 @@
             <section class="tlp-pane">
                 <div class="tlp-pane-container">
                     <section class="tlp-pane-section">
-                        <div class="tlp-form-element">
-                            <label class="tlp-label" for="username">Titre</label>
-                            <input type="text" class="tlp-input" id="username" name="username" placeholder="" value="{{title}}">
-                        </div>
-
-                        <div class="tlp-form-element">
-                            <label class="tlp-label" for="description">Description</label>
-                            <textarea type="text" class="tlp-textarea" id="description" name="description" placeholder="">{{content}}</textarea>
-                        </div>
-
-                        <div class="tlp-form-element">
-                            <label class="tlp-label" for="area-adjusted">Promotion</label>
-                            <div class="tlp-switch">
-                                <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
-                                <label for="toggle" class="tlp-switch-button" aria-hidden="false"></label>
-                            </div>
-                            <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Demander la promotion en première page de Tuleap ? </p>
-                        </div>
-
-                        <div class="tlp-form-element">
-                            <label class="tlp-label" for="area-adjusted">Publique</label>
+                        <form action="/project/102/news/{{id}}" method="post">
                             <div class="tlp-form-element">
-                                <div class="tlp-switch">
-                                    <input type="checkbox" id="toggle_public" class="tlp-switch-checkbox">
-                                    <label for="toggle_public" class="tlp-switch-button" aria-hidden="false"></label>
-                                </div>
-                                <p class="tlp-text-info"><i class="fa fa-life-saver"></i> Visible par tous ou seulement par les membres du projet</p>
+                                <label class="tlp-label" for="username">Titre</label>
+                                <input type="text" class="tlp-input" id="username" name="username" placeholder="" value="{{title}}">
                             </div>
-                        </div>
 
-                        <div class="tlp-form-element">
-                            <label class="tlp-label" for="types-adjusted">Partage</label>
-                            <select class="tlp-select tlp-select-adjusted" id="types-adjusted" name="types[]" multiple>
-                                <option value="project_member">membre du projet</option>
-                                <option value="project_admin">admin du  projet</option>
-                                <option value="users">utilisateurs</option>
-                                <option value="files_admin">gestionnaire fichier</option>
-                                <option value="wiki_admin">admin wiki</option>
-                                <option value="news_admin">admin d'annonce</option>
-                            </select>
-                        </div>
+                            <div class="tlp-form-element">
+                                <label class="tlp-label" for="description">Description</label>
+                                <textarea type="text" class="tlp-textarea" id="description" name="description" placeholder="">{{content}}</textarea>
+                            </div>
 
-                        <button type="submit" formmethod="post" class="tlp-button-primary">
-                            Valider
-                        </button>
+                            <div class="tlp-form-element">
+                                <label class="tlp-label" for="area-adjusted">Promotion</label>
+                                    <div class="tlp-switch">
+                                        <input type="checkbox" id="toggle" class="tlp-switch-checkbox">
+                                        <label for="toggle" class="tlp-switch-button" aria-hidden="false"></label>
+                                    </div>
+                                    <p class="tlp-text-info">
+                                        <i class="fa fa-life-saver"></i>
+                                        Demander la promotion en première page de Tuleap ?
+                                    </p>
+                            </div>
 
+                            <div class="tlp-form-element">
+                                <label class="tlp-label" for="area-adjusted">Publique</label>
+                                    <div class="tlp-form-element">
+                                        <div class="tlp-switch">
+                                            <input type="checkbox" id="toggle_public" class="tlp-switch-checkbox">
+                                            <label for="toggle_public" class="tlp-switch-button" aria-hidden="false"></label>
+                                        </div>
+                                        <p class="tlp-text-info">
+                                            <i class="fa fa-life-saver"></i>
+                                            Visible par tous ou seulement par les membres du projet !
+                                        </p>
+                                    </div>
+                            </div>
+
+                            <div class="tlp-form-element">
+                                <label class="tlp-label" for="types-adjusted">Partage</label>
+                                    <select class="tlp-select tlp-select-adjusted" id="types-adjusted" name="types[]" multiple>
+                                        <option value="project_member">membre du projet</option>
+                                        <option value="project_admin">admin du  projet</option>
+                                        <option value="users">utilisateurs</option>
+                                        <option value="files_admin">gestionnaire fichier</option>
+                                        <option value="wiki_admin">admin wiki</option>
+                                        <option value="news_admin">admin d'annonce</option>
+                                    </select>
+                            </div>
+
+                            <button type="submit" class="tlp-button-primary">
+                                Valider
+                            </button>
+                        </form>
                      </section>
                 </div>
             </section>
