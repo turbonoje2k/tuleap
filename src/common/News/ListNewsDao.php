@@ -41,4 +41,11 @@ class ListNewsDao extends DataAccessObject
         $sql = 'SELECT * FROM news_bytes WHERE id = ?';
         return $this->getDB()->row($sql, $news_id);
     }
+
+    /*public function updateOneNews(int $news_id): ?array
+    {
+        $sql = "UPDATE news_bytes
+                SET summary=$title, details=$content WHERE id = $news_id";
+        return $this->getDB()->row($sql, $news_id);
+    }*/
 }

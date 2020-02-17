@@ -34,7 +34,15 @@ class UpdateOneNewsController implements DispatchableWithRequest
 
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
-
-        var_dump("Je vais mettre à jour un truc");
+        $List_news_dao = new ListNewsDao(); // Db connect
+        var_dump($List_news_dao);
+        $update_news = (int) $variables['news_id'];
+        var_dump($update_news);
+        $row = $List_news_dao->getOneNews($update_news);//need change function for update
+        var_dump($row);
+        $title = $row['summary'];
+        $content = $row['details'];
+        $_POST = [$title, $content]; //prepare UpDated content in $_POST
+        var_dump($_POST);
     }
 }
