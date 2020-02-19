@@ -33,7 +33,13 @@ class OneNewsPresenter
     {
         $this->id = $id;
         $this->title = $title;
+        if (strlen($title)>25) {
+            $this->title = substr($title, 0, 25);
+        }
         $this->content = $content;
+        if (strlen($content)>80) {
+            $this->content = substr($content, 0, 80);
+        }
         $this->project_id = $project_id;
     }
 }
