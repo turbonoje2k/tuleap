@@ -42,10 +42,10 @@ class ListNewsDao extends DataAccessObject
         return $this->getDB()->row($sql, $news_id);
     }
 
-    public function updateOneNews($update_news, $news_id): ?array
+    public function updateOneNews(int $news_id, string $title, string $content): ?array
     {
         $sql = "UPDATE news_bytes
                 SET summary=?, details=? WHERE id = ?";
-        return $this->getDB()->row($sql, $_POST['title'], $_POST['content'], $news_id);
+        return $this->getDB()->row($sql, $title, $content, $news_id);
     }
 }
