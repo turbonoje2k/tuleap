@@ -34,9 +34,17 @@ class UpdateOneNewsController implements DispatchableWithRequest
 
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
-            $title = $request->get('title');
-            $content = $request->get('content');
-                var_dump($title);
-                var_dump($content);
+        //db connect
+        $List_news_dao = new ListNewsDao();
+        $news_id = (int) $variables['news_id'];
+
+        //update datas
+        $update_news = $request->get('title');
+        $List_news_dao->updateOneNews($update_news, $news_id);
+
+        //msg
+        echo '<div class="tlp-alert-success">
+                Well done! Data are successfully post in Database !!
+                </div>';
     }
 }
