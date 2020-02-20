@@ -58,7 +58,7 @@ class ListNewsController implements DispatchableWithRequest, DispatchableWithBur
 
         //boucle for needed data of project (id, title, content, group id)
         foreach ($list_news_dao->getProjectNews($project) as $row) {
-            //fill array with data in new instance of newsView
+            //fill array with data in instance of newsView
             $all_news []= new OneNewsPresenter($row['id'], $row['summary'], $row['details'], $row['group_id']);
         }
 

@@ -48,4 +48,11 @@ class ListNewsDao extends DataAccessObject
                 SET summary=?, details=? WHERE id = ?";
         return $this->getDB()->row($sql, $title, $content, $news_id);
     }
+
+    /*public function deleteOneNews($news_id): ?array
+    {
+        $sql = "DELETE FROM news_bytes WHERE id = ?";
+        return $this->getDB()->row($sql, $news_id);
+
+    }*/
 }

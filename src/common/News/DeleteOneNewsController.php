@@ -22,26 +22,28 @@ declare(strict_types=1);
 
 namespace Tuleap\News;
 
-class OneNewsPresenter
-{
-    public $id;
-    public $title;
-    public $content;
-    public $project_id;
+use HTTPRequest;
+use Tuleap\Layout\BaseLayout;
+use Tuleap\Request\DispatchableWithRequest;
 
-    public function __construct(int $id, string $title, string $content, int $project_id)
+class DeleteOneNewsController implements DispatchableWithRequest
+{
+    //manque le routeur????
+    public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
-        $this->id = $id;
-        $this->title = $title;
-        //limit caracter in view
-        //2 steps (1 count letter wth strlen 2 limite the letter wth substr)
-        if (strlen($title)>25) {
-            $this->title = substr($title, 0, 25);
-        }
-        $this->content = $content;
-        if (strlen($content)>80) {
-            $this->content = substr($content, 0, 80);
-        }
-        $this->project_id = $project_id;
+        //db connect
+        $List_news_dao = new ListNewsDao();
+
+        //need news_id
+        $news_id = (int) $variables ['news_id'];
+
+        //ou
+        $news_id = (int) $request->get('id');
+
+        //delete data on db
+        $List_news_dao->deleteOneNews($news_id);
+
+        //reload
+        $layout->redirect('/project/102/news');
     }
 }
