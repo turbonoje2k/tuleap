@@ -42,13 +42,17 @@ class DisplayOneNewsController implements DispatchableWithRequest, DispatchableW
 
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
+        // instance new of Db connect
         $List_news_dao = new ListNewsDao();
+
+        //need news'id in process param
         $news_id = (int) $variables['news_id'];
+        //fn : db select = news,  with getOneNews by id (news id)
         $row = $List_news_dao->getOneNews($news_id);
-        if (! $row) {
-            throw new NotFoundException("Cet ID n'existe pas");
-        }
+
+        //creat views of edit news with param needed
         $edit_news = new EditingOneNewsPresenter($row['id'], $row['summary'], $row['details'], $row['group_id']);
+
 
         $layout->header(['title' => 'One news']);
         $this->renderer->renderToPage('one-news', $edit_news);

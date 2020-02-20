@@ -36,12 +36,17 @@ class UpdateOneNewsController implements DispatchableWithRequest
     {
         //db connect
         $List_news_dao = new ListNewsDao();
-        $news_id = (int) $variables['news_id'];
 
-        //update datas
+        //need news_id
+        $news_id = (int) $variables ['news_id'];
+
+        // variabilise req get title n content
         $title = (string) $request->get('title');
         $content = (string) $request->get('content');
+
+        //update data
         $List_news_dao->updateOneNews($news_id, $title, $content);
+
 
         $layout->redirect('/project/102/news');
     }
