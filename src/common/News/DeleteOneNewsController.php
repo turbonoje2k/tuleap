@@ -25,9 +25,13 @@ namespace Tuleap\News;
 use HTTPRequest;
 use Tuleap\Layout\BaseLayout;
 use Tuleap\Request\DispatchableWithRequest;
+use Tuleap\Request\GetProjectTrait;
 
 class DeleteOneNewsController implements DispatchableWithRequest
 {
+    use GetProjectTrait;
+
+    private $project_manager;
     //manque le routeur????
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
@@ -35,7 +39,7 @@ class DeleteOneNewsController implements DispatchableWithRequest
         $List_news_dao = new ListNewsDao();
 
         //need news_id
-        $news_id = (int) $variables ['news_id'];
+        //$news_id = (int) $variables ['news_id'];
 
         //ou
         $news_id = (int) $request->get('id');

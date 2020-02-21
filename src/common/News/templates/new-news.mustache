@@ -9,7 +9,7 @@
             <a class="breadcrumb-link router-link-exact-active router-link-active fa fa-edit"> {{title}}</a>
         </div>
 
-        <h1 class="tlp-framed-horizontally">{{title}}</h1>
+        <!--<h1 class="tlp-framed-horizontally">{{title}}</h1>-->
         <div class="tlp-framed-horizontally">
             <section class="tlp-pane">
                 <div class="tlp-pane-container">
@@ -17,12 +17,12 @@
                         <form action="/project/{{project_id}}/news" method="post">
                             <div class="tlp-form-element">
                                 <label class="tlp-label" for="title">Titre</label>
-                                <input type="text" class="tlp-input" id="title" name="title" placeholder="saisir un titre" value="{{title}}">
+                                <input type="text" class="tlp-input" id="title" name="title" placeholder="saisir un titre" value="">
                             </div>
 
                             <div class="tlp-form-element">
                                 <label class="tlp-label" for="content">Description</label>
-                                <textarea type="text" class="tlp-textarea" id="content" name="content" placeholder="saisir du contenu">{{content}}</textarea>
+                                <textarea type="text" class="tlp-textarea" id="content" name="content" placeholder="saisir du contenu"></textarea>
                             </div>
 
                             <div class="tlp-form-element">

@@ -40,7 +40,7 @@ class OneNewsPresenter
         }
         $this->content = $content;
         if (strlen($content)>80) {
-            $this->content = substr($content, 0, 80);
+            $this->content = substr($content, 0, 70);
         }
         $this->project_id = $project_id;
     }

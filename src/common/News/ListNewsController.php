@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace Tuleap\News;
 
 use HTTPRequest;
+use Project;
 use Tuleap\Layout\BaseLayout;
 use Tuleap\Request\DispatchableWithBurningParrot;
 use Tuleap\Request\DispatchableWithProject;
@@ -56,7 +57,7 @@ class ListNewsController implements DispatchableWithRequest, DispatchableWithBur
         $list_news_dao = new ListNewsDao();
         $all_news = [];
 
-        //boucle for needed data of project (id, title, content, group id)
+        //boucle on project_id for needed data of project (id, title, content, group id)
         foreach ($list_news_dao->getProjectNews($project) as $row) {
             //fill array with data in instance of newsView
             $all_news []= new OneNewsPresenter($row['id'], $row['summary'], $row['details'], $row['group_id']);
