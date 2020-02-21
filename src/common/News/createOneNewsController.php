@@ -18,33 +18,38 @@
  * along with Tuleap. If not, see <http://www.gnu.org/licenses/>.
  */
 
-declare(strict_types=1);
 
 namespace Tuleap\News;
+
 
 use HTTPRequest;
 use Tuleap\Layout\BaseLayout;
 use Tuleap\Request\DispatchableWithRequest;
-use Tuleap\Request\GetProjectTrait;
 
-class DeleteOneNewsController implements DispatchableWithRequest
+class createOneNewsController implements DispatchableWithRequest
 {
-    use GetProjectTrait;
+    /**
+     * @var \MustacheRenderer|\TemplateRenderer
+     */
+    private $renderer;
 
-    private $project_manager;
-    //manque le routeur????
+    public function __construct(\TemplateRendererFactory $renderer_factory)
+    {
+        $this->renderer = $renderer_factory->getRenderer(__DIR__ . '/templates');
+    }
+
     public function process(HTTPRequest $request, BaseLayout $layout, array $variables)
     {
         //db connect
         $List_news_dao = new ListNewsDao();
 
-        //selct id to delete
-        $news_id = (int) $request->get('id');
+        //appel de la fonction
+        $List_news_dao->createOneNews();
 
-        //delete data on db
-        $List_news_dao->deleteOneNews($news_id);
+        $new_news = new createOneNewsPresenter();
 
-        //reload
-        $layout->redirect('/project/102/news');
+        $layout->header(['new_news']);
+        $this->renderer->renderToPage('new_news', $new_news);
+        $layout->footer([]);
     }
 }

@@ -640,14 +640,14 @@ class RouteCollector
         return new UpdateOneNewsController();
     }
 
-    /*public static function createOneNews(): DispatchableWithRequest
+    public static function createOneNews(): DispatchableWithRequest
     {
         return new createOneNewsController();
-    }*/
+    }
 
     /*public static function deleteOneNews(): DispatchableWithRequest
     {
-        return new deleteOneNewsController();
+        return new UpdateOneNewsController();
     }*/
 
     public function getLegacyController(string $path)
@@ -697,7 +697,8 @@ class RouteCollector
         $r->get('/project/{project_id:\d+}/news', [self::class, 'getNewsList']);
         $r->get('/project/{project_id:\d+}/news/{news_id:\d+}', [self::class, 'getOneNews']);
         $r->post('/project/{project_id:\d+}/news/{news_id:\d+}', [self::class, 'postOneNews']);
-        //$r->get('/project/{project_id:\d+}/news/{news_id:\d+}', [self::class, 'newNews']);
+        //$r->post('/project/{project_id:\d+}/news/{news_id:\d+}', [self::class, 'deleteNews']);
+        $r->get('/project/{project_id:\d+}/news/create', [self::class, 'createOneNews']);
 
         $r->addRoute(['GET', 'POST'], '/projects/{name}[/]', [self::class, 'getOrPostProjectHome']);
 

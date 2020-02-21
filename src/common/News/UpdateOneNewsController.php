@@ -47,7 +47,11 @@ class UpdateOneNewsController implements DispatchableWithRequest
         //update data
         $List_news_dao->updateOneNews($news_id, $title, $content);
 
+        //delete news
+        //$List_news_dao->deleteOneNews($delete_id);
 
         $layout->redirect('/project/102/news');
+
+
     }
 }

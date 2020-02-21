@@ -48,6 +48,11 @@ class ListNewsDao extends DataAccessObject
                 SET summary=?, details=? WHERE id = ?";
         return $this->getDB()->row($sql, $title, $content, $news_id);
     }
+    public function createOneNews(int $news_id, string $title,string $content): ?array
+    {
+        $sql = "INSERT INTO news_bytes VALUES ('?', '?')";
+        return $this->getDB()->row($sql,$news_id, $title, $content);
+    }
 
     public function deleteOneNews($news_id): ?array
     {

@@ -65,7 +65,7 @@ class ListNewsController implements DispatchableWithRequest, DispatchableWithBur
 
         //here is create the view
         $layout->header(['title' => 'List of news']);
-        $this->renderer->renderToPage('list-news', new ListOfNewsPresenter($all_news));
+        $this->renderer->renderToPage('list-news', new ListOfNewsPresenter($all_news, (int) $project->getID()));
         $layout->footer([]);
     }
 }

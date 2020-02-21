@@ -18,19 +18,23 @@
  * along with Tuleap. If not, see <http://www.gnu.org/licenses/>.
  */
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Tuleap\News;
 
-class ListOfNewsPresenter
+
+class createOneNewsPresenter
 {
-    public $list_of_news;
     public $project_id;
+    public $content;
+    public $title;
+    public $id;
 
-    public function __construct(array $list_of_news, int $project_id)
+    public function __construct(int $project_id, int $id, string $title, string $content)
     {
-        $this->list_of_news = $list_of_news;
         $this->project_id = $project_id;
+        $this->id = $id;
+        $this->title = $title;
+        $this->content = $content;
     }
-
 }

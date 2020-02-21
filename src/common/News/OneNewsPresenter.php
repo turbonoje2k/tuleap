@@ -33,15 +33,12 @@ class OneNewsPresenter
     {
         $this->id = $id;
         $this->title = $title;
+
         //limit caracter in view
-        //2 steps (1 count letter wth strlen 2 limite the letter wth substr)
-        if (strlen($title)>25) {
             $this->title = substr($title, 0, 25);
-        }
+
         $this->content = $content;
-        if (strlen($content)>80) {
             $this->content = substr($content, 0, 70);
-        }
         $this->project_id = $project_id;
     }
 }
